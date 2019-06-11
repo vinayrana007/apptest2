@@ -43,4 +43,4 @@ http://ec2-54-71-49-218.us-west-2.compute.amazonaws.com:8080/blue/organizations/
 
 ## Pull the Docker Image from DockerHub registry.
 1. To pull the docker image run "docker pull vinayrana007/apptest2:stable"
-2. To run the docker container in the background type "docker run -p 3000:3000 -d vinayrana007/apptest2"
+2. To run the docker container in the background type "docker run -p 3000:3000 -d vinayrana007/apptest2:stable"
