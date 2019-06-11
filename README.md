@@ -30,9 +30,9 @@ http://ec2-54-71-49-218.us-west-2.compute.amazonaws.com:8080/blue/organizations/
 5. The app will run on port 3000.
 
 
-## Prirequisits
+## Prerequisits
 1. You should have Docker and GIT installed on your laptop/desktop/VM.
 
-## How to pull the docker image
+## Pull the Docker Image from DockerHub registry.
 1. To pull the docker image run "docker pull vinayrana007/apptest2:stable"
 2. To run the docker container in the background type "docker run -p 3000:3000 -d vinayrana007/apptest2"
