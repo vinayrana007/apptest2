@@ -50,7 +50,8 @@ pipeline {
 			steps{
 				script {
 					docker.withRegistry( '', registryCredential ) {
-					dockerImage.push("latest")
+					dockerImage.push("${env.BUILD_NUMBER}") // create a new tag with jenkins build number
+					dockerImage.push("stable")
           }
         }
       }
