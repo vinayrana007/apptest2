@@ -1,0 +1,31 @@
+{
+  "name": "apptest2",
+  "version": "1.0.0",
+  "description": "pre-interview technical test",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha ./tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinayrana007/apptest2.git"
+  },
+  "keywords": [
+    "vinayrana007"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vinayrana007/apptest2/issues"
+  },
+  "homepage": "https://github.com/vinayrana007/apptest2#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "git-rev-sync": "^1.12.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "supertest": "^4.0.2"
+  }
+}
