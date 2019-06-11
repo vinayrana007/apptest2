@@ -1,23 +1,20 @@
-// Jenkins CI/CD pipeline Groovy Script 
+// Jenkins CI/CD pipeline Groovy Script
 pipeline {
-
-    // Environment variable for DockerHub registry
-    environment {
-        registry = "vinayrana007/apptest2" // DockerHub registry/repo details to push images to DockerHub
-        registryCredential = "docker-hub-cred" // Credentials for pusing images
-        dockerImage = "" // Global variable for later use
-    }
-    // Use any available agent
+  environment {
+    registry = "vinayrana007/apptest2" // Setting up DockerHub registry
+    registryCredential = 'docker-hub-cred' // Setting up DockerHub system credentials to use during pushing image
+    dockerImage = ''
+  }
     agent any
 
     stages {
-        // Clone the repository from GitHub   
+        // Clone the repository from GitHub
         stage('Cloning Repo from GitHub') {
             steps {
                 git 'https://github.com/vinayrana007/apptest2.git'
             }
         }
-        // Install node dependencies 
+        // Install node dependencies
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
@@ -28,7 +25,7 @@ pipeline {
             steps {
                 sh 'npm test'
             }
-        } 
+        }
         // Build Image from Dockerfile
         stage('Build Docker Image') {
             steps {
@@ -36,18 +33,29 @@ pipeline {
                     dockerImage = docker.build("$registry:$BUILD_NUMBER")
                 }
             }
-        } 
-        // Push Docker Image to DockerImage
-        stage('Push Docker Image') {
-            steps{
-                script {
-                    docker.withRegistry( '', 'dockerHubCredentials' ) { // Use jenkins system credentials to LogIn to DockerHub
-                        dockerImage.push("${env.BUILD_NUMBER}") // Create a new Tag with Jenkins Build Number
-                        dockerImage.push("stable") // Override the latest tag with New Build
-                    }
-                }
-            }
-        }   
+        }
+        // Push Docker Image to DockerHub Post Validation
+		stage('Manual Validation Before Pushing Image') {
+			steps {
+				script {
+					env.PublishAction_INPUT = input message: 'Do you want to Push Image to DockerHub? Choose from the below options:',
+					parameters: [choice(name: 'Push Action', choices: 'No\nYes', description: 'Choose "Yes" if you want to push image.')]
+				}
+			}
+		}
+		stage('Deploy Image To DockerHub') {
+			when {
+			environment name: 'PublishAction_INPUT', value: 'Yes'
+		}
+			steps{
+				script {
+					docker.withRegistry( '', registryCredential ) {
+					dockerImage.push("${env.BUILD_NUMBER}")
+					dockerImage.push("latest")
+          }
+        }
+      }
+    }
 
         stage('Remove Docker Image') {
             steps{
