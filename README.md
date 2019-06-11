@@ -39,7 +39,7 @@ The pipeline flow can be seen in below image.
 
 
 ## Prerequisits
-1. You should have Docker and GIT installed on your laptop/desktop/VM.
+1. You should have Docker, GIT & Jenkins installed on your laptop/desktop/VM.
 
 
 ## Pull the Docker Image from DockerHub registry & Run container.
