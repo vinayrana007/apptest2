@@ -17,6 +17,8 @@ The API endpoints for the webapp are :
 7. Post approvar action, if "yes", Jenkins will use pipeline variablised credentials to push new image to the DockerHub registry.
 8. In last stage, the server removes the image from local storage.
 
+## Prerequisits
+1. You should have Docker, GIT & Jenkins installed on your laptop/desktop/VM.
 
 ## Jenkins Pipeline
 1. Please see the "Jenkinsfile" for the groovy script.
@@ -36,10 +38,6 @@ The pipeline flow can be seen in below image.
 2. The the unit tests by typing "npm test".
 3. The the app by typing "npm start".
 4. The app will run on port 3000.
-
-
-## Prerequisits
-1. You should have Docker, GIT & Jenkins installed on your laptop/desktop/VM.
 
 
 ## Pull the Docker Image from DockerHub registry & Run container.
