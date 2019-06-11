@@ -17,6 +17,7 @@ The API endpoints for the webapp are :
 7. Post approvar action, if "yes", Jenkins will use pipeline variablised credentials to push new image to the DockerHub registry.
 8. In last stage, the server removes the image from local storage.
 
+
 ## Jenkins Pipeline
 1. Please see the "Jenkinsfile" for the groovy script.
 2. Make sure to add your DockerHub credentials with jenkins system credetials and update your Groovy script accordingly.
@@ -28,6 +29,7 @@ http://ec2-54-71-49-218.us-west-2.compute.amazonaws.com:8080/blue/organizations/
 ## Cloning the Image from GitHub Repo.
 1. Clone this project by running "git clone https://github.com/vinayrana007/apptest2.git"
 
+
 ## Build & Test the application on your local system post cloning.
 1. Once the project has been cloned, chnage to the apptest2 directory and run "npm install".
 2. The the unit tests by typing "npm test".
@@ -38,6 +40,7 @@ http://ec2-54-71-49-218.us-west-2.compute.amazonaws.com:8080/blue/organizations/
 ## Prerequisits
 1. You should have Docker and GIT installed on your laptop/desktop/VM.
 
+
 ## Pull the Docker Image from DockerHub registry.
-1. To pull the docker image run "docker pull vinayrana007/apptest2:latest"
+1. To pull the docker image run "docker pull vinayrana007/apptest2:stable"
 2. To run the docker container in the background type "docker run -p 3000:3000 -d vinayrana007/apptest2"
