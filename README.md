@@ -22,9 +22,10 @@ The API endpoints for the webapp are :
 1. Please see the "Jenkinsfile" for the groovy script.
 2. Make sure to add your DockerHub credentials with jenkins system credetials and update your Groovy script accordingly.
 
-Jenkins pipeline is avaliable below Link up to 16th June 2019.
-http://ec2-54-71-49-218.us-west-2.compute.amazonaws.com:8080/blue/organizations/jenkins/AppTest2/
+## Pipeline Flow
+The pipeline flow can be seen in below image.
 
+<img src="images/CICD-Pipeline.JPG">
 
 ## Cloning the Image from GitHub Repo.
 1. Clone this project by running "git clone https://github.com/vinayrana007/apptest2.git".
