@@ -42,6 +42,6 @@ The pipeline flow can be seen in below image.
 1. You should have Docker and GIT installed on your laptop/desktop/VM.
 
 
-## Pull the Docker Image from DockerHub registry.
+## Pull the Docker Image from DockerHub registry & Run container.
 1. To pull the docker image run "docker pull vinayrana007/apptest2:stable"
-2. To run the docker container in the background type "docker run -p 3000:3000 -d vinayrana007/apptest2:stable"
+2. To run the docker container in the background type "docker run -itd -p 3000:3000 --name apptest2 vinayrana007/apptest2:stable"
