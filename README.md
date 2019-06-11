@@ -27,7 +27,7 @@ http://ec2-54-71-49-218.us-west-2.compute.amazonaws.com:8080/blue/organizations/
 
 
 ## Cloning the Image from GitHub Repo.
-1. Clone this project by running "git clone https://github.com/vinayrana007/apptest2.git"
+1. Clone this project by running "git clone https://github.com/vinayrana007/apptest2.git".
 
 
 ## Build & Test the application on your local system post cloning.
